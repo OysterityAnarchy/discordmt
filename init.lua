@@ -97,6 +97,7 @@ discord.handle_response = function(response)
 end
 
 discord.send = function(message, id)
+    if message:find("@mcl_death_messages") then return end
     local data = {
         type = 'DISCORD-RELAY-MESSAGE',
         content = minetest.strip_colors(message)
