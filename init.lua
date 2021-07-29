@@ -117,10 +117,9 @@ minetest.chat_send_all = function(message)
     discord.send(message)
 end
 
---this is handled by the anti spam plugin now
---minetest.register_on_chat_message(function(name, message)
---    discord.send(('<%s>: %s'):format(name, message))
---end)
+minetest.register_on_chat_message(function(name, message)
+    discord.send(('<%s>: %s'):format(name, message))
+end)
 
 local timer = 0
 minetest.register_globalstep(function(dtime)
