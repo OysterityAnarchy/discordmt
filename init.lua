@@ -118,7 +118,7 @@ minetest.chat_send_all = function(message)
 end
 
 minetest.register_on_chat_message(function(name, message)
-    if clam_antispam and clam_antispam.muted[name] then return true end
+    if clam_antispam and clam_antispam.muted[name] then return end
     discord.send(('<%s>: %s'):format(name, message))
 end)
 
