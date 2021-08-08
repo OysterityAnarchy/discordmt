@@ -112,15 +112,14 @@ discord.send = function(message, id)
     }, function(_) end)
 end
 
-minetest.chat_send_all = function(message)
-    discord.chat_send_all(message)
-    discord.send(message)
-end
+--minetest.chat_send_all = function(message)
+--    discord.send(message)
+--end
 
-minetest.register_on_chat_message(function(name, message)
-    if clam_antispam and clam_antispam.muted[name] then return end
-    discord.send(('<%s>: %s'):format(name, message))
-end)
+--minetest.register_on_chat_message(function(name, message)
+--    if clam_antispam and clam_antispam.muted[name] then return end
+--    discord.send(('<%s>: %s'):format(name, message))
+--end)
 
 local timer = 0
 minetest.register_globalstep(function(dtime)
